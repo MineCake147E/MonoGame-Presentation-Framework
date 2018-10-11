@@ -10,7 +10,7 @@ namespace MonoGame.Guis.Threading
 		public Dispatcher Dispatcher { get; }
 		protected DispatcherObject()
 		{
-
+			Dispatcher = Dispatcher.CurrentDispatcher;
 		}
 	}
 }

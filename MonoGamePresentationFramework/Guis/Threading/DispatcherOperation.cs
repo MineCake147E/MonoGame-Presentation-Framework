@@ -67,6 +67,7 @@ namespace MonoGame.Guis.Threading
 		public bool Abort()
 		{
 			//TODO: Implementation
+			
 			throw new NotImplementedException();
 		}
 		/// <summary>
@@ -77,8 +78,7 @@ namespace MonoGame.Guis.Threading
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		public TaskAwaiter GetAwaiter()
 		{
-			//TODO: Implementation
-			throw new NotImplementedException();
+			return Task.GetAwaiter();
 		}
 		/// <summary>
 		/// Waits for the operation to complete

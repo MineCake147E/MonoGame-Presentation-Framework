@@ -4,26 +4,26 @@ using System.Text;
 
 namespace MonoGame.Guis.Threading
 {
-	//
-	// 概要:
-	//     状態の値を示します、 System.Windows.Threading.DispatcherOperationです。
+	/// <summary>
+	/// Describes the possible values for the status of a DispatcherOperation.
+	/// </summary>
 	public enum DispatcherOperationStatus
 	{
-		//
-		// 概要:
-		//     操作が保留中とはまだ、 System.Windows.Threading.Dispatcher キューです。
+		/// <summary>
+		/// The operation is pending and is still in the Dispatcher queue.
+		/// </summary>
 		Pending = 0,
-		//
-		// 概要:
-		//     操作が中止されます。
+		/// <summary>
+		/// The operation has aborted.
+		/// </summary>
 		Aborted = 1,
-		//
-		// 概要:
-		//     操作を完了するとします。
+		/// <summary>
+		/// The operation is completed.
+		/// </summary>
 		Completed = 2,
-		//
-		// 概要:
-		//     操作は実行を開始しましたが完了していません。
+		/// <summary>
+		/// The operation started executing, but has not completed.
+		/// </summary>
 		Executing = 3
 	}
 }

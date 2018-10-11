@@ -30,26 +30,32 @@ namespace MonoGame.Guis.Threading
 		{
 			Thread = thread;
 		}
-		//
-		// 概要:
-		//     決定するかどうか、 System.Windows.Threading.Dispatcher シャット ダウンが完了します。
-		//
-		// 戻り値:
-		//     true ディスパッチャーがシャット ダウンを完了している場合それ以外の場合、 falseです。
+		/// <summary>
+		/// Determines whether the Dispatcher has finished shutting down.
+		/// </summary>
 		public bool HasShutdownFinished { get; private set; } = false;
-		//
-		// 概要:
-		//     決定するかどうか、 System.Windows.Threading.Dispatcher がシャット ダウンします。
-		//
-		// 戻り値:
-		//     true 場合、 System.Windows.Threading.Dispatcher のシャット ダウン以外の場合が開始 falseします。
+		/// <summary>
+		/// Determines whether the Dispatcher is shutting down.
+		/// </summary>
 		public bool HasShutdownStarted { get; private set; } = false;
-		//
-		// 概要:
-		//     このスレッドを取得 System.Windows.Threading.Dispatcher に関連付けられています。
-		//
-		// 戻り値:
-		//     スレッド。
+		/// <summary>
+		/// Gets the thread this Dispatcher is associated with.
+		/// </summary>
 		public Thread Thread { get; }
+
+		#region Events
+		/// <summary>
+		/// Occurs when a thread exception is thrown and uncaught during execution of a delegate by way of Invoke or BeginInvoke.
+		/// </summary>
+		public event DispatcherUnhandledExceptionEventHandler UnhandledException;
+		/// <summary>
+		/// Occurs when the Dispatcher finishes shutting down.
+		/// </summary>
+		public event EventHandler ShutdownFinished;
+		/// <summary>
+		/// Occurs when the Dispatcher begins to shut down.
+		/// </summary>
+		public event EventHandler ShutdownStarted;
+		#endregion
 	}
 }

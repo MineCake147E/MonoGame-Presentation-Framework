@@ -4,58 +4,58 @@ using System.Text;
 
 namespace MonoGame.Guis.Threading
 {
-	//
-	// 概要:
-	//     位置による操作を呼び出すことが優先度の説明、 System.Windows.Threading.Dispatcherです。
+	/// <summary>
+	/// Priority of Dispatcher's Operation
+	/// </summary>
 	public enum DispatcherPriority
 	{
-		//
-		// 概要:
-		//     列挙値は-1 です。 これは、無効な優先順位です。
+		/// <summary>
+		/// The enumeration value is -1. This is an invalid priority.
+		/// </summary>
 		Invalid = -1,
-		//
-		// 概要:
-		//     列挙値は 0 です。 操作は処理されません。
+		/// <summary>
+		/// The enumeration value is 0. Operations are not processed.
+		/// </summary>
 		Inactive = 0,
-		//
-		// 概要:
-		//     列挙値は 1 です。 操作は、システムがアイドル状態のときに処理されます。
+		/// <summary>
+		/// The enumeration value is 1. Operations are processed when the system is idle.
+		/// </summary>
 		SystemIdle = 1,
-		//
-		// 概要:
-		//     列挙値は 2 です。 操作は、アプリケーションがアイドル状態のときに処理されます。
+		/// <summary>
+		/// The enumeration value is 2. Operations are processed when the application is idle.
+		/// </summary>
 		ApplicationIdle = 2,
-		//
-		// 概要:
-		//     列挙値は 3 です。 操作は、バック グラウンド操作が完了した後で処理されます。
+		/// <summary>
+		/// The enumeration value is 3. Operations are processed after background operations have completed.
+		/// </summary>
 		ContextIdle = 3,
-		//
-		// 概要:
-		//     列挙値は 4 です。 操作は、すべての他の非アイドルの操作が完了した後で処理されます。
+		/// <summary>
+		/// The enumeration value is 4. Operations are processed after all other non-idle operations are completed.
+		/// </summary>
 		Background = 4,
-		//
-		// 概要:
-		//     列挙値は 5 です。 操作は、入力と同じ優先順位で処理されます。
+		/// <summary>
+		/// The enumeration value is 5. Operations are processed at the same priority as input.
+		/// </summary>
 		Input = 5,
-		//
-		// 概要:
-		//     列挙値は、6 です。 操作は、レイアウトとレンダリングが完了すると、入力の優先順位の項目を処理する前に処理されます。 具体的には、Loaded イベントを発生させる場合に使用されます。
+		/// <summary>
+		/// The enumeration value is 6. Operations are processed when layout and render has finished but just before items at input priority are serviced. Specifically this is used when raising the Loaded event.
+		/// </summary>
 		Loaded = 6,
-		//
-		// 概要:
-		//     列挙値は 7 です。 表示と同じ優先順位で処理します。
+		/// <summary>
+		/// The enumeration value is 7. Operations processed at the same priority as rendering.
+		/// </summary>
 		Render = 7,
-		//
-		// 概要:
-		//     列挙値は 8 です。 操作は、データ バインドと同じ優先順位で処理されます。
+		/// <summary>
+		/// The enumeration value is 8. Operations are processed at the same priority as data binding.
+		/// </summary>
 		DataBind = 8,
-		//
-		// 概要:
-		//     列挙値が 9 です。 操作は、通常の優先順位で処理されます。 これは、一般的なアプリケーションの優先順位です。
+		/// <summary>
+		/// The enumeration value is 9. Operations are processed at normal priority. This is the typical application priority.
+		/// </summary>
 		Normal = 9,
-		//
-		// 概要:
-		//     列挙値は 10 です。 操作は、その他の非同期操作の前に処理されます。 これは、最高の優先順位です。
+		/// <summary>
+		/// The enumeration value is 10. Operations are processed before other asynchronous operations. This is the highest priority.
+		/// </summary>
 		Send = 10
 	}
 }
